@@ -44,5 +44,32 @@ class { '::php':
   php::fpm::pool { 'www2':
     listen => '/var/run/php7-fpm.sock2',
   }
-}
 
+service { 'php7-fpm':
+    ensure     => running,
+    enable     => true,
+    hasrestart => true,
+    hasstatus  => true,
+    require    => Package['php7-fpm'],
+  }
+
+  file { '/etc/php7/fpm/pool.d/www.conf':
+    owner   => root,
+    group   => root,
+    mode    => '0644',
+    source  => 'puppet:///modules/php/files/www.conf',
+    notify  => Service['php7-fpm'],
+    require => Package['php7-fpm'],
+  }
+
+  file { '/etc/php7/fpm/php.ini':
+    owner   => root,
+    group   => root,
+    mode    => '0644',
+    source  => 'puppet:///modules/php/files/php.ini',
+    notify  => Service['php7-fpm'],
+    require => Package['php7-fpm'],
+  }
+
+  include mariadb::php7-mysql
+}
