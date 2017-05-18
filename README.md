@@ -5,7 +5,7 @@ A refresh of [vagrant-wordpress-lemp](https://bitbucket.org/axocomm/vagrant-word
 ### What is Included
 + Ubuntu 17.04
 + Nginx
-+ PHP 5.6
++ PHP 7.0
 + MariaDB 10.0
 + phpMyAdmin
 + [WP-CLI](http://wp-cli.org/)
