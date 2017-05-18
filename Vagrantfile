@@ -76,7 +76,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision 'shell', inline: 'test -d /etc/puppet/modules/apt || puppet module install puppetlabs/apt'
 
   # Provision the VM using Puppet
-  config.vm.provision "shell", path: "/scripts/puppet.sh"
+  config.vm.provision "shell", path: "/scripts/ubuntu7.sh"
   config.vm.provision 'puppet' do |puppet|
     puppet.manifests_path = 'puppet/manifests'
     puppet.manifest_file  = 'site.pp'
