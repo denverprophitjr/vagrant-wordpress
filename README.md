@@ -3,14 +3,18 @@ A refresh of [vagrant-wordpress-lemp](https://bitbucket.org/axocomm/vagrant-word
 
 ## Overview
 ### What is Included
-+ Ubuntu 14.04
++ Ubuntu 17.04
 + Nginx
 + PHP 5.6
 + MariaDB 10.0
 + phpMyAdmin
 + [WP-CLI](http://wp-cli.org/)
 
-### Configuration
+## Required Vagrant Plugins
+- `vagrant plugin install vagrant-vbguest`
+- `vagrant plugin install vagrant-hostsupdater`
+
+## Configuration
 Configuration is mostly done inside the `Vagrantfile`. Key items are as follows:
 
 + `config.vm.hostname` - the hostname of the VM. With the Vagrant Hostsupdater plugin, it will be accessible at `http://<hostname>.dev/` when setup is complete.
