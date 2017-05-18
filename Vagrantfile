@@ -61,7 +61,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   vb.customize ["modifyvm", :id, "--memory", "1024"]
   # end
   config.vm.provider 'virtualbox' do |vb|
-    vb.gui = true 
+    vb.gui = true
     vb.customize ['modifyvm', :id, '--memory', '1024']
     vb.customize ["modifyvm", :id, "--vram", "128"]
     vb.customize ["modifyvm", :id, "--audio", "none"]
@@ -76,6 +76,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision 'shell', inline: 'test -d /etc/puppet/modules/apt || puppet module install puppetlabs/apt'
 
   # Provision the VM using Puppet
+  config.vm.provision "shell", path: "scripts/puppet.sh"
   config.vm.provision 'puppet' do |puppet|
     puppet.manifests_path = 'puppet/manifests'
     puppet.manifest_file  = 'site.pp'
