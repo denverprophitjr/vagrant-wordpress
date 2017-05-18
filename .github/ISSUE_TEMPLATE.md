@@ -20,7 +20,8 @@
 -->
 
 - **Vagrant Version:** `x.xx`
-  - `vagrant --version` 
+  - `vagrant --version`
+  - If you plan on submitting a bug report, please submit debug-level logs along with the report using [**GIST**](https://gist.github.com/) or some other paste service by prepending `VAGRANT_LOG=debug`to your`vagrant` commands
 - **Virtual Box Version:** `x.xx`
   - `VBoxManage --version`
 
