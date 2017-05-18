@@ -39,7 +39,7 @@ class mariadb::install {
 }
 
 class mariadb::php5-mysql {
-  package { 'php5-mysql':
+  package { 'php7-mysql':
     ensure  => installed,
     require => Package['php5-fpm', 'mariadb-server-10.0'],
     notify  => Service['php5-fpm'],
