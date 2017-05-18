@@ -1,5 +1,4 @@
 class mariadb::install {
-  include apt
 
   apt::key { 'mariadb':
     ensure => present,
