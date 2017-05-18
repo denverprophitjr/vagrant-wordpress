@@ -8,8 +8,8 @@
 - [ ] This is a question about using the Wordpress Vagrant.
 - [ ] This is a feature request for WordPress Vagrant.
 - [ ] I have checked my vagrant version and am [up to date](#Environment-Information)
-- [ ] I have tested locally with `bundle exec jekyll build`.
-- [ ] I believe this to be a bug with the theme --- not Jekyll, GitHub Pages or one of the bundled plugins.
+- [ ] I have tested locally with `vagrant init; vagrant up`.
+- [ ] I believe this to be a bug.
 
 ---
 ## Troubleshooting Steps For Vagrant WordPress
@@ -29,16 +29,5 @@
 
 ---
 
-## Expected behavior
-
-Describe the intended output or what you expected to see. [Edit Me]
-
-## Steps to reproduce the behavior
-
-Include a link to a public repository or ZIP file so that they can more easily be reproduced. Being able to see your actual files helps troubleshooting as most issues stem from missing YAML Front Matter, a mis-configured `_config.sys` file, or `_posts` content.
-
-Describe the steps you took for this problem to exist. Such as you cloned the theme, customized `_config.yml`, added your own posts, and started up a Jekyll server locally.
-
-If an error occurred on GitHub Pages when pushing, please build locally and provide a complete log by running `bundle exec jekyll --trace --verbose` and including this output in the filed issue.
-
-Screenshots can also be included if they help illustrate a behavior.
+## Actual Behavior
+Use markdown code syntax to output your vagrant build.
