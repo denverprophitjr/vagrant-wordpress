@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = 'ubuntu/zesty64'
+  config.vm.box = 'ubuntu/xenial64'
 
   # The hostname for the VM
   config.vm.hostname = 'vagrant-wordpress'
