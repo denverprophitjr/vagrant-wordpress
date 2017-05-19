@@ -73,8 +73,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # View the documentation for the provider you're using for more
   # information on available options.
 
-  config.vm.provision 'shell', inline: 'test -d /etc/puppet/modules/apt || puppet module install puppetlabs/apt'
-
   # Provision the VM using Puppet
   config.vm.provision "shell", path: "/scripts/ubuntu7.sh"
   config.vm.provision 'puppet' do |puppet|
