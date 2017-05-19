@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = 'ubuntu/trusty64'
+  config.vm.box = 'ubuntu/zesty64'
 
   # The hostname for the VM
   config.vm.hostname = 'vagrant-wordpress'
@@ -62,9 +62,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # end
   config.vm.provider 'virtualbox' do |vb|
     vb.gui = true
+    vb.customize ['modifyvm',  :id, '--hwvirtex', 'on']
+    vb.customize ['modifyvm',  :id, '--hpet', 'on']
+    vb.customize ['modifyvm',  :id, '--pagefusion', 'on']
+    vb.customize ['modifyvm',  :id, '--cpu-profile', 'host']
     vb.customize ['modifyvm', :id, '--memory', '1024']
-    vb.customize ["modifyvm", :id, "--vram", "128"]
-    vb.customize ["modifyvm", :id, "--audio", "none"]
+    vb.customize ['modifyvm', :id, '--vram', '64']
+    vb.customize ['modifyvm', :id, '--cpus', '2']
+    vb.customize ['modifyvm', :id, '--cpuhotplug', 'on']
+    vb.customize ['setextradata', 'global', 'GUI/MaxGuestResolution', 'any']
+    vb.customize ['modifyvm', :id, '--ioapic', 'on']
+    vb.customize ['modifyvm', :id, '--rtcuseutc', 'on']
+    vb.customize ['modifyvm', :id, '--audio', 'none']
+    vb.customize ['modifyvm', :id, '--paravirtprovider', 'kvm']
+    vb.customize ['modifyvm', :id, '--chipset', 'ich9']
     
   end
 
