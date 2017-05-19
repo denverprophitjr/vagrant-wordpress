@@ -9,6 +9,6 @@ class mariadb {
  }
 file { '/etc/my.cnf.d/server.cnf':
  ensure => file, mode => 644,
- source => 'puppet:///mariadb/files/server.cnf',
+ source => 'puppet:///modules/mariadb/files/server.cnf',
     }
 }
