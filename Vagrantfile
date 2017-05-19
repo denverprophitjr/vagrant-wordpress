@@ -74,7 +74,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # information on available options.
 
   # Provision the VM using Puppet
-  config.vm.provision "shell", path: "/scripts/ubuntu7.sh"
+  config.vm.provision "shell", path: "scripts/ubuntu7.sh"
   config.vm.provision 'puppet' do |puppet|
     puppet.manifests_path = 'puppet/manifests'
     puppet.manifest_file  = 'site.pp'
